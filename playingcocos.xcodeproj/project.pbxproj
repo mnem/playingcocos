@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		551A050A135ECB6300E17A30 /* particles2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 551A0509135ECB6300E17A30 /* particles2.plist */; };
 		557F8C45135E4B7000E13599 /* particles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 557F8C44135E4B7000E13599 /* particles.plist */; };
-		557F8C48135E520500E13599 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 557F8C47135E520500E13599 /* Entitlements.plist */; };
 		55802032135E21F2007DBEB3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55802031135E21F2007DBEB3 /* QuartzCore.framework */; };
 		55802034135E21F2007DBEB3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55802033135E21F2007DBEB3 /* OpenGLES.framework */; };
 		55802036135E21F2007DBEB3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55802035135E21F2007DBEB3 /* OpenAL.framework */; };
@@ -124,15 +123,15 @@
 		55802192135E21F4007DBEB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55802191135E21F4007DBEB3 /* main.m */; };
 		55802195135E21F4007DBEB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55802194135E21F4007DBEB3 /* AppDelegate.m */; };
 		55802198135E21F4007DBEB3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55802197135E21F4007DBEB3 /* RootViewController.m */; };
-		5580219B135E21F5007DBEB3 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5580219A135E21F5007DBEB3 /* HelloWorldLayer.m */; };
+		5580219B135E21F5007DBEB3 /* PlayfieldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5580219A135E21F5007DBEB3 /* PlayfieldLayer.m */; };
 		558021A3135E29D2007DBEB3 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 558021A2135E29D2007DBEB3 /* player.png */; };
+		55E69879135F76CA00B2915F /* GameWorldSceneFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69878135F76CA00B2915F /* GameWorldSceneFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		551A0509135ECB6300E17A30 /* particles2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = particles2.plist; path = Resources/particles2.plist; sourceTree = "<group>"; };
 		557F8C44135E4B7000E13599 /* particles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = particles.plist; path = Resources/particles.plist; sourceTree = "<group>"; };
-		557F8C47135E520500E13599 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = ../Entitlements.plist; sourceTree = "<group>"; };
-		5580202D135E21F2007DBEB3 /* playingcocos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playingcocos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5580202D135E21F2007DBEB3 /* Playing Cocos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Playing Cocos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55802031135E21F2007DBEB3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		55802033135E21F2007DBEB3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		55802035135E21F2007DBEB3 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -364,10 +363,12 @@
 		55802194135E21F4007DBEB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		55802196135E21F4007DBEB3 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		55802197135E21F4007DBEB3 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		55802199135E21F4007DBEB3 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		5580219A135E21F5007DBEB3 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		55802199135E21F4007DBEB3 /* PlayfieldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayfieldLayer.h; sourceTree = "<group>"; };
+		5580219A135E21F5007DBEB3 /* PlayfieldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayfieldLayer.m; sourceTree = "<group>"; };
 		5580219C135E21F5007DBEB3 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		558021A2135E29D2007DBEB3 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Resources/player.png; sourceTree = "<group>"; };
+		55E69877135F76CA00B2915F /* GameWorldSceneFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWorldSceneFactory.h; sourceTree = "<group>"; };
+		55E69878135F76CA00B2915F /* GameWorldSceneFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameWorldSceneFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,7 +402,7 @@
 		5580202E135E21F2007DBEB3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5580202D135E21F2007DBEB3 /* playingcocos.app */,
+				5580202D135E21F2007DBEB3 /* Playing Cocos.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -424,12 +425,8 @@
 		55802041135E21F2007DBEB3 /* playingcocos */ = {
 			isa = PBXGroup;
 			children = (
-				55802193135E21F4007DBEB3 /* AppDelegate.h */,
-				55802194135E21F4007DBEB3 /* AppDelegate.m */,
-				55802196135E21F4007DBEB3 /* RootViewController.h */,
-				55802197135E21F4007DBEB3 /* RootViewController.m */,
-				55802199135E21F4007DBEB3 /* HelloWorldLayer.h */,
-				5580219A135E21F5007DBEB3 /* HelloWorldLayer.m */,
+				55E6987C135F837100B2915F /* Scenes */,
+				55E69874135F711100B2915F /* Standard Fluff */,
 				5580219C135E21F5007DBEB3 /* GameConfig.h */,
 				55802042135E21F2007DBEB3 /* Resources */,
 				55802056135E21F2007DBEB3 /* libs */,
@@ -442,7 +439,6 @@
 			isa = PBXGroup;
 			children = (
 				551A0509135ECB6300E17A30 /* particles2.plist */,
-				557F8C47135E520500E13599 /* Entitlements.plist */,
 				557F8C44135E4B7000E13599 /* particles.plist */,
 				558021A2135E29D2007DBEB3 /* player.png */,
 				55802043135E21F2007DBEB3 /* Default.png */,
@@ -767,15 +763,61 @@
 				55802190135E21F4007DBEB3 /* Prefix.pch */,
 				55802191135E21F4007DBEB3 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55E69874135F711100B2915F /* Standard Fluff */ = {
+			isa = PBXGroup;
+			children = (
+				55802193135E21F4007DBEB3 /* AppDelegate.h */,
+				55802194135E21F4007DBEB3 /* AppDelegate.m */,
+				55802196135E21F4007DBEB3 /* RootViewController.h */,
+				55802197135E21F4007DBEB3 /* RootViewController.m */,
+			);
+			path = "Standard Fluff";
+			sourceTree = "<group>";
+		};
+		55E6987C135F837100B2915F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				55E6987D135F84D000B2915F /* GameWorld */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		55E6987D135F84D000B2915F /* GameWorld */ = {
+			isa = PBXGroup;
+			children = (
+				55E6987F135F852F00B2915F /* Layers */,
+				55E6987E135F851800B2915F /* Entities */,
+				55E69877135F76CA00B2915F /* GameWorldSceneFactory.h */,
+				55E69878135F76CA00B2915F /* GameWorldSceneFactory.m */,
+			);
+			path = GameWorld;
+			sourceTree = "<group>";
+		};
+		55E6987E135F851800B2915F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		55E6987F135F852F00B2915F /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				55802199135E21F4007DBEB3 /* PlayfieldLayer.h */,
+				5580219A135E21F5007DBEB3 /* PlayfieldLayer.m */,
+			);
+			path = Layers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5580202C135E21F2007DBEB3 /* playingcocos */ = {
+		5580202C135E21F2007DBEB3 /* Playing Cocos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5580219F135E21F5007DBEB3 /* Build configuration list for PBXNativeTarget "playingcocos" */;
+			buildConfigurationList = 5580219F135E21F5007DBEB3 /* Build configuration list for PBXNativeTarget "Playing Cocos" */;
 			buildPhases = (
 				55802029135E21F2007DBEB3 /* Sources */,
 				5580202A135E21F2007DBEB3 /* Frameworks */,
@@ -785,9 +827,9 @@
 			);
 			dependencies = (
 			);
-			name = playingcocos;
+			name = "Playing Cocos";
 			productName = playingcocos;
-			productReference = 5580202D135E21F2007DBEB3 /* playingcocos.app */;
+			productReference = 5580202D135E21F2007DBEB3 /* Playing Cocos.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -810,7 +852,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5580202C135E21F2007DBEB3 /* playingcocos */,
+				5580202C135E21F2007DBEB3 /* Playing Cocos */,
 			);
 		};
 /* End PBXProject section */
@@ -831,7 +873,6 @@
 				55802055135E21F2007DBEB3 /* iTunesArtwork in Resources */,
 				558021A3135E29D2007DBEB3 /* player.png in Resources */,
 				557F8C45135E4B7000E13599 /* particles.plist in Resources */,
-				557F8C48135E520500E13599 /* Entitlements.plist in Resources */,
 				551A050A135ECB6300E17A30 /* particles2.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -940,54 +981,14 @@
 				55802192135E21F4007DBEB3 /* main.m in Sources */,
 				55802195135E21F4007DBEB3 /* AppDelegate.m in Sources */,
 				55802198135E21F4007DBEB3 /* RootViewController.m in Sources */,
-				5580219B135E21F5007DBEB3 /* HelloWorldLayer.m in Sources */,
+				5580219B135E21F5007DBEB3 /* PlayfieldLayer.m in Sources */,
+				55E69879135F76CA00B2915F /* GameWorldSceneFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		557F8C49135E524E00E13599 /* Ad Hoc */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = "Ad Hoc";
-		};
-		557F8C4A135E524E00E13599 /* Ad Hoc */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer: David Wagner (WH2B73Q5LD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = playingcocos/Prefix.pch;
-				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
-				INFOPLIST_FILE = playingcocos/Resources/Info.plist;
-				OTHER_LDFLAGS = "-lz";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8862EFF7-C683-4195-9726-00115D4F13AC";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = app;
-			};
-			name = "Ad Hoc";
-		};
 		5580219D135E21F5007DBEB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1003,7 +1004,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1019,7 +1020,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1034,7 +1035,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = playingcocos/Prefix.pch;
+				GCC_PREFIX_HEADER = "playingcocos/Supporting Files/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = playingcocos/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
@@ -1050,7 +1051,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = playingcocos/Prefix.pch;
+				GCC_PREFIX_HEADER = "playingcocos/Supporting Files/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = playingcocos/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
@@ -1069,17 +1070,15 @@
 			buildConfigurations = (
 				5580219D135E21F5007DBEB3 /* Debug */,
 				5580219E135E21F5007DBEB3 /* Release */,
-				557F8C49135E524E00E13599 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5580219F135E21F5007DBEB3 /* Build configuration list for PBXNativeTarget "playingcocos" */ = {
+		5580219F135E21F5007DBEB3 /* Build configuration list for PBXNativeTarget "Playing Cocos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				558021A0135E21F5007DBEB3 /* Debug */,
 				558021A1135E21F5007DBEB3 /* Release */,
-				557F8C4A135E524E00E13599 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

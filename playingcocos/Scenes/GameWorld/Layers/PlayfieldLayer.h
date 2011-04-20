@@ -1,5 +1,5 @@
 //
-//  HelloWorldLayer.h
+//  PlayfieldLayer.h
 //  playingcocos
 //
 //  Created by David Wagner on 19/04/2011.
@@ -11,14 +11,11 @@
 #import "cocos2d.h"
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer
+@interface PlayfieldLayer : CCLayer
 {
 }
 
 - (void) updateJitter;
 - (void) spawnEmitter;
-
-// returns a CCScene that contains the HelloWorldLayer as the only child
-+(CCScene *) scene;
 
 @end

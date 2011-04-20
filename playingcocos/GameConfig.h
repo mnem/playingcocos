@@ -9,6 +9,12 @@
 #ifndef __GAME_CONFIG_H
 #define __GAME_CONFIG_H
 
+#import "GameWorldSceneFactory.h"
+
+// It'd be nice to use some sort of reflection here. Wonder if I
+// can do that in Objective-C? - mnem
+#define kInitialSceneFactory GameWorldSceneFactory
+
 //
 // Supported Autorotations:
 //		None,
