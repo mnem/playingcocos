@@ -126,6 +126,9 @@
 		5580219B135E21F5007DBEB3 /* PlayfieldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5580219A135E21F5007DBEB3 /* PlayfieldLayer.m */; };
 		558021A3135E29D2007DBEB3 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 558021A2135E29D2007DBEB3 /* player.png */; };
 		55E69879135F76CA00B2915F /* GameWorldSceneFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69878135F76CA00B2915F /* GameWorldSceneFactory.m */; };
+		55E69885135F912300B2915F /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69884135F912300B2915F /* PlayerEntity.m */; };
+		55E69888135F94CC00B2915F /* TargetEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69887135F94CB00B2915F /* TargetEntity.m */; };
+		55E6988B135F989300B2915F /* bitsnbobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69889135F989100B2915F /* bitsnbobs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -369,6 +372,12 @@
 		558021A2135E29D2007DBEB3 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Resources/player.png; sourceTree = "<group>"; };
 		55E69877135F76CA00B2915F /* GameWorldSceneFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWorldSceneFactory.h; sourceTree = "<group>"; };
 		55E69878135F76CA00B2915F /* GameWorldSceneFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameWorldSceneFactory.m; sourceTree = "<group>"; };
+		55E69883135F912300B2915F /* PlayerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEntity.h; sourceTree = "<group>"; };
+		55E69884135F912300B2915F /* PlayerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerEntity.m; sourceTree = "<group>"; };
+		55E69886135F94CB00B2915F /* TargetEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetEntity.h; sourceTree = "<group>"; };
+		55E69887135F94CB00B2915F /* TargetEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetEntity.m; sourceTree = "<group>"; };
+		55E69889135F989100B2915F /* bitsnbobs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bitsnbobs.m; sourceTree = "<group>"; };
+		55E6988A135F989200B2915F /* bitsnbobs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitsnbobs.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,6 +440,8 @@
 				55802042135E21F2007DBEB3 /* Resources */,
 				55802056135E21F2007DBEB3 /* libs */,
 				5580218F135E21F4007DBEB3 /* Supporting Files */,
+				55E69889135F989100B2915F /* bitsnbobs.m */,
+				55E6988A135F989200B2915F /* bitsnbobs.h */,
 			);
 			path = playingcocos;
 			sourceTree = "<group>";
@@ -799,6 +810,10 @@
 		55E6987E135F851800B2915F /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				55E69883135F912300B2915F /* PlayerEntity.h */,
+				55E69884135F912300B2915F /* PlayerEntity.m */,
+				55E69886135F94CB00B2915F /* TargetEntity.h */,
+				55E69887135F94CB00B2915F /* TargetEntity.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -983,6 +998,9 @@
 				55802198135E21F4007DBEB3 /* RootViewController.m in Sources */,
 				5580219B135E21F5007DBEB3 /* PlayfieldLayer.m in Sources */,
 				55E69879135F76CA00B2915F /* GameWorldSceneFactory.m in Sources */,
+				55E69885135F912300B2915F /* PlayerEntity.m in Sources */,
+				55E69888135F94CC00B2915F /* TargetEntity.m in Sources */,
+				55E6988B135F989300B2915F /* bitsnbobs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

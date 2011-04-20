@@ -110,7 +110,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [GameWorldSceneFactory scene]];
+	[[CCDirector sharedDirector] runWithScene: [kInitialSceneFactory scene]];
 }
 
 

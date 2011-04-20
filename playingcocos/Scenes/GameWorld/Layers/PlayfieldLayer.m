@@ -10,9 +10,12 @@
 // Import the interfaces
 #import "PlayfieldLayer.h"
 #import "CCTouchDispatcher.h"
+#import "PlayerEntity.h"
+#import "TargetEntity.h"
+#import "bitsnbobs.h"
 
-CCSprite *player_png;
-CCParticleSystemQuad *emitter;
+PlayerEntity *player;
+TargetEntity *target;
 
 const int JITTER = 33;
 const int HALF_JITTER = 33/2;
@@ -22,7 +25,7 @@ int updateJitter;
 
 CGPoint targetPoint;
 
-// HelloWorldLayer implementation
+// PlayfieldLayer implementation
 @implementation PlayfieldLayer
 
 // on "init" you need to initialize your instance
@@ -32,29 +35,18 @@ CGPoint targetPoint;
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) 
     {
-        CGSize win = [[CCDirector sharedDirector] winSize];
-        targetPoint = CGPointMake(win.width/2, win.height/2);
-        
-        player_png = [CCSprite spriteWithFile: @"player.png"];
-        player_png.position = targetPoint;
-        [self addChild:player_png];
+		player = [PlayerEntity create];
+		target = [TargetEntity create];
 		
-		emitter = [CCParticleSystemQuad particleWithFile: @"particles.plist"];
-//		emitter = [CCParticleSystemQuad particleWithFile: @"particles2.plist"];
-        [self addChild:emitter];
-		[self spawnEmitter];
-        
+        [self addChild: player];
+        [self addChild: target];
+		
 		[self updateJitter];
-        [self schedule:@selector(nextFrame:)];
+        [self scheduleUpdate];
         self.isTouchEnabled = YES;
 	}
 	
     return self;
-}
-
-float nrand()
-{
-	return (float)rand() / RAND_MAX;
 }
 
 - (void) updateJitter
@@ -64,13 +56,6 @@ float nrand()
     updateJitter = frThird + frThird * nrand();
     jitterPoint.x = nrand() * JITTER - HALF_JITTER;
     jitterPoint.y = nrand() * JITTER - HALF_JITTER;
-}
-
-- (void) spawnEmitter
-{
-	CGSize win = [[CCDirector sharedDirector] winSize];
-	emitter.position = CGPointMake(((win.width - 50) * nrand()) + 25, ((win.height - 50) * nrand()) + 25);
-	[emitter resetSystem];
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event 
@@ -94,7 +79,7 @@ float nrand()
 	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
-- (void) nextFrame:(ccTime)dt
+- (void) update:(ccTime)dt
 {
     if (--updateJitter <= 0) 
 	{
@@ -102,12 +87,12 @@ float nrand()
     }
     
 	CGPoint actualTarget = CGPointMake(targetPoint.x + jitterPoint.x, targetPoint.y + jitterPoint.y);
-	player_png.position = ccpLerp(player_png.position, actualTarget, 0.1f);
+	player.position = ccpLerp(player.position, actualTarget, 0.1f);
 	
-	CGRect collisionRect = CGRectMake(emitter.position.x - 8, emitter.position.y - 8, 16, 16);
-	if(CGRectContainsPoint(collisionRect, player_png.position))
+	CGRect collisionRect = CGRectMake(target.position.x - 8, target.position.y - 8, 16, 16);
+	if(CGRectContainsPoint(collisionRect, player.position))
 	{
-		[self spawnEmitter];
+		[target respawn];
 	}
 }
 

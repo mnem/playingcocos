@@ -1,5 +1,5 @@
 //
-//  GameWorldScene.h
+//  PlayerEntity.h
 //  playingcocos
 //
 //  Created by David Wagner on 20/04/2011.
@@ -9,10 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface GameWorldSceneFactory : NSObject
-{    
+@interface PlayerEntity : CCSprite
+{
+//    CGRect collisionRect;
 }
 
-+(CCScene *) scene;
+//@property (readonly) CGRect* collisionRect;
+
+-(void) moveToStartPosition;
+
++(PlayerEntity *) create;
 
 @end

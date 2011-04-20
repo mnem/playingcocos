@@ -16,6 +16,5 @@
 }
 
 - (void) updateJitter;
-- (void) spawnEmitter;
 
 @end

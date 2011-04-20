@@ -1,5 +1,5 @@
 //
-//  GameWorldScene.h
+//  TargetEntity.h
 //  playingcocos
 //
 //  Created by David Wagner on 20/04/2011.
@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface GameWorldSceneFactory : NSObject
+@interface TargetEntity : CCParticleSystemQuad
 {    
 }
 
-+(CCScene *) scene;
+-(void) respawn;
+
+
++(TargetEntity *) create;
 
 @end
