@@ -15,6 +15,9 @@
 {
 }
 
+- (void) updateJitter;
+- (void) spawnEmitter;
+
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
 

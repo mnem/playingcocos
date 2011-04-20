@@ -9,6 +9,18 @@
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
+#import "CCTouchDispatcher.h"
+
+CCSprite *player_png;
+CCParticleSystemQuad *emitter;
+
+const int JITTER = 33;
+const int HALF_JITTER = 33/2;
+
+CGPoint jitterPoint;
+int updateJitter;
+
+CGPoint targetPoint;
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -33,21 +45,85 @@
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super init])) {
+	if( (self=[super init])) 
+    {
+        CGSize win = [[CCDirector sharedDirector] winSize];
+        targetPoint = CGPointMake(win.width/2, win.height/2);
+        
+        player_png = [CCSprite spriteWithFile: @"player.png"];
+        player_png.position = targetPoint;
+        [self addChild:player_png];
 		
-		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
-		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
-		
-		// add the label as a child to this Layer
-		[self addChild: label];
+		emitter = [CCParticleSystemQuad particleWithFile: @"particles.plist"];
+//		emitter = [CCParticleSystemQuad particleWithFile: @"particles2.plist"];
+        [self addChild:emitter];
+		[self spawnEmitter];
+        
+		[self updateJitter];
+        [self schedule:@selector(nextFrame:)];
+        self.isTouchEnabled = YES;
 	}
-	return self;
+	
+    return self;
+}
+
+float nrand()
+{
+	return (float)rand() / RAND_MAX;
+}
+
+- (void) updateJitter
+{
+	float framerate = 1/[CCDirector sharedDirector].animationInterval;
+	float frThird = framerate / 3;
+    updateJitter = frThird + frThird * nrand();
+    jitterPoint.x = nrand() * JITTER - HALF_JITTER;
+    jitterPoint.y = nrand() * JITTER - HALF_JITTER;
+}
+
+- (void) spawnEmitter
+{
+	CGSize win = [[CCDirector sharedDirector] winSize];
+	emitter.position = CGPointMake(((win.width - 50) * nrand()) + 25, ((win.height - 50) * nrand()) + 25);
+	[emitter resetSystem];
+}
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event 
+{
+    targetPoint = [self convertTouchToNodeSpace: touch];
+    return YES;
+}
+
+- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event 
+{
+    targetPoint = [self convertTouchToNodeSpace: touch];
+}
+
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event 
+{
+    targetPoint = [self convertTouchToNodeSpace: touch];
+}
+
+-(void) registerWithTouchDispatcher
+{
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+}
+
+- (void) nextFrame:(ccTime)dt
+{
+    if (--updateJitter <= 0) 
+	{
+        [self updateJitter];
+    }
+    
+	CGPoint actualTarget = CGPointMake(targetPoint.x + jitterPoint.x, targetPoint.y + jitterPoint.y);
+	player_png.position = ccpLerp(player_png.position, actualTarget, 0.1f);
+	
+	CGRect collisionRect = CGRectMake(emitter.position.x - 8, emitter.position.y - 8, 16, 16);
+	if(CGRectContainsPoint(collisionRect, player_png.position))
+	{
+		[self spawnEmitter];
+	}
 }
 
 // on "dealloc" you need to release all your retained objects
