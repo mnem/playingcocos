@@ -7,7 +7,7 @@
 //
 
 #import "PlayerEntity.h"
-
+#import "CCNode-Collision.h"
 
 @implementation PlayerEntity
 
@@ -16,33 +16,26 @@
 	return [PlayerEntity spriteWithFile: @"player.png"];
 }
 
-//-(CGRect*) collisionRect
-//{
-//	return &self->collisionRect;
-//}
-
-//-(void) setPosition:(CGPoint)newPosition
-//{
-//	self->collisionRect.origin = newPosition;
-//	super.position = newPosition;
-//}
-
-
 - (id)init 
 {
     self = [super init];
     if (self) 
 	{
-//		self->collisionRect.size = CGSizeMake(16, 16);
+//		[self initCustomCollisionSize:CGSizeMake(16, 16)];
 		[self moveToStartPosition];
     }
     return self;
 }
 
+- (void)dealloc {
+//    [self deallocCustomCollisionSize];
+    [super dealloc];
+}
+
 -(void) moveToStartPosition
 {
 	CGSize win = [[CCDirector sharedDirector] winSize];
-	self.position = CGPointMake(win.width/2, win.height/2);
+	self.position = ccp(win.width/2, win.height/2);
 }
 
 @end

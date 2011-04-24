@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		551A050A135ECB6300E17A30 /* particles2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 551A0509135ECB6300E17A30 /* particles2.plist */; };
+		552657101362471F00A9611C /* rainbowburst.png in Resources */ = {isa = PBXBuildFile; fileRef = 5526570F1362471F00A9611C /* rainbowburst.png */; };
+		55265714136247A000A9611C /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 55265713136247A000A9611C /* PlayerEntity.m */; };
 		557F8C45135E4B7000E13599 /* particles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 557F8C44135E4B7000E13599 /* particles.plist */; };
 		55802032135E21F2007DBEB3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55802031135E21F2007DBEB3 /* QuartzCore.framework */; };
 		55802034135E21F2007DBEB3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55802033135E21F2007DBEB3 /* OpenGLES.framework */; };
@@ -126,13 +128,17 @@
 		5580219B135E21F5007DBEB3 /* PlayfieldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5580219A135E21F5007DBEB3 /* PlayfieldLayer.m */; };
 		558021A3135E29D2007DBEB3 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 558021A2135E29D2007DBEB3 /* player.png */; };
 		55E69879135F76CA00B2915F /* GameWorldSceneFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69878135F76CA00B2915F /* GameWorldSceneFactory.m */; };
-		55E69885135F912300B2915F /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69884135F912300B2915F /* PlayerEntity.m */; };
+		55E69885135F912300B2915F /* BackgroundEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69884135F912300B2915F /* BackgroundEntity.m */; };
 		55E69888135F94CC00B2915F /* TargetEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69887135F94CB00B2915F /* TargetEntity.m */; };
 		55E6988B135F989300B2915F /* bitsnbobs.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69889135F989100B2915F /* bitsnbobs.m */; };
+		55FD7F791364B813009D77FC /* CCNode-Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FD7F781364B813009D77FC /* CCNode-Collision.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		551A0509135ECB6300E17A30 /* particles2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = particles2.plist; path = Resources/particles2.plist; sourceTree = "<group>"; };
+		5526570F1362471F00A9611C /* rainbowburst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rainbowburst.png; path = Resources/rainbowburst.png; sourceTree = "<group>"; };
+		552657121362474C00A9611C /* PlayerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEntity.h; sourceTree = "<group>"; };
+		55265713136247A000A9611C /* PlayerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerEntity.m; sourceTree = "<group>"; };
 		557F8C44135E4B7000E13599 /* particles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = particles.plist; path = Resources/particles.plist; sourceTree = "<group>"; };
 		5580202D135E21F2007DBEB3 /* Playing Cocos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Playing Cocos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55802031135E21F2007DBEB3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -372,12 +378,14 @@
 		558021A2135E29D2007DBEB3 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Resources/player.png; sourceTree = "<group>"; };
 		55E69877135F76CA00B2915F /* GameWorldSceneFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWorldSceneFactory.h; sourceTree = "<group>"; };
 		55E69878135F76CA00B2915F /* GameWorldSceneFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameWorldSceneFactory.m; sourceTree = "<group>"; };
-		55E69883135F912300B2915F /* PlayerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEntity.h; sourceTree = "<group>"; };
-		55E69884135F912300B2915F /* PlayerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerEntity.m; sourceTree = "<group>"; };
+		55E69883135F912300B2915F /* BackgroundEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundEntity.h; sourceTree = "<group>"; };
+		55E69884135F912300B2915F /* BackgroundEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundEntity.m; sourceTree = "<group>"; };
 		55E69886135F94CB00B2915F /* TargetEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetEntity.h; sourceTree = "<group>"; };
 		55E69887135F94CB00B2915F /* TargetEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetEntity.m; sourceTree = "<group>"; };
 		55E69889135F989100B2915F /* bitsnbobs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bitsnbobs.m; sourceTree = "<group>"; };
 		55E6988A135F989200B2915F /* bitsnbobs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitsnbobs.h; sourceTree = "<group>"; };
+		55FD7F771364B813009D77FC /* CCNode-Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode-Collision.h"; sourceTree = "<group>"; };
+		55FD7F781364B813009D77FC /* CCNode-Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode-Collision.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +442,7 @@
 		55802041135E21F2007DBEB3 /* playingcocos */ = {
 			isa = PBXGroup;
 			children = (
+				55FD7F751364B7A4009D77FC /* Sneaky Bits */,
 				55E6987C135F837100B2915F /* Scenes */,
 				55E69874135F711100B2915F /* Standard Fluff */,
 				5580219C135E21F5007DBEB3 /* GameConfig.h */,
@@ -449,6 +458,7 @@
 		55802042135E21F2007DBEB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5526570F1362471F00A9611C /* rainbowburst.png */,
 				551A0509135ECB6300E17A30 /* particles2.plist */,
 				557F8C44135E4B7000E13599 /* particles.plist */,
 				558021A2135E29D2007DBEB3 /* player.png */,
@@ -810,8 +820,10 @@
 		55E6987E135F851800B2915F /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				55E69883135F912300B2915F /* PlayerEntity.h */,
-				55E69884135F912300B2915F /* PlayerEntity.m */,
+				55265713136247A000A9611C /* PlayerEntity.m */,
+				552657121362474C00A9611C /* PlayerEntity.h */,
+				55E69883135F912300B2915F /* BackgroundEntity.h */,
+				55E69884135F912300B2915F /* BackgroundEntity.m */,
 				55E69886135F94CB00B2915F /* TargetEntity.h */,
 				55E69887135F94CB00B2915F /* TargetEntity.m */,
 			);
@@ -825,6 +837,15 @@
 				5580219A135E21F5007DBEB3 /* PlayfieldLayer.m */,
 			);
 			path = Layers;
+			sourceTree = "<group>";
+		};
+		55FD7F751364B7A4009D77FC /* Sneaky Bits */ = {
+			isa = PBXGroup;
+			children = (
+				55FD7F771364B813009D77FC /* CCNode-Collision.h */,
+				55FD7F781364B813009D77FC /* CCNode-Collision.m */,
+			);
+			path = "Sneaky Bits";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -889,6 +910,7 @@
 				558021A3135E29D2007DBEB3 /* player.png in Resources */,
 				557F8C45135E4B7000E13599 /* particles.plist in Resources */,
 				551A050A135ECB6300E17A30 /* particles2.plist in Resources */,
+				552657101362471F00A9611C /* rainbowburst.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,9 +1020,11 @@
 				55802198135E21F4007DBEB3 /* RootViewController.m in Sources */,
 				5580219B135E21F5007DBEB3 /* PlayfieldLayer.m in Sources */,
 				55E69879135F76CA00B2915F /* GameWorldSceneFactory.m in Sources */,
-				55E69885135F912300B2915F /* PlayerEntity.m in Sources */,
+				55E69885135F912300B2915F /* BackgroundEntity.m in Sources */,
 				55E69888135F94CC00B2915F /* TargetEntity.m in Sources */,
 				55E6988B135F989300B2915F /* bitsnbobs.m in Sources */,
+				55265714136247A000A9611C /* PlayerEntity.m in Sources */,
+				55FD7F791364B813009D77FC /* CCNode-Collision.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1058,6 +1082,7 @@
 				INFOPLIST_FILE = playingcocos/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1074,6 +1099,7 @@
 				INFOPLIST_FILE = playingcocos/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

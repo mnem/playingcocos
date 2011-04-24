@@ -1,5 +1,5 @@
 //
-//  HelloWorldLayer.m
+//  PlayfieldLayer.m
 //  playingcocos
 //
 //  Created by David Wagner on 19/04/2011.
@@ -12,10 +12,13 @@
 #import "CCTouchDispatcher.h"
 #import "PlayerEntity.h"
 #import "TargetEntity.h"
+#import "BackgroundEntity.h"
 #import "bitsnbobs.h"
+#import "CCNode-Collision.h"
 
-PlayerEntity *player;
-TargetEntity *target;
+BackgroundEntity *backgroundEntity;
+PlayerEntity *playerEntity;
+TargetEntity *targetEntity;
 
 const int JITTER = 33;
 const int HALF_JITTER = 33/2;
@@ -35,11 +38,16 @@ CGPoint targetPoint;
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) 
     {
-		player = [PlayerEntity create];
-		target = [TargetEntity create];
+		backgroundEntity = [BackgroundEntity create];
+		playerEntity = [PlayerEntity create];
+		targetEntity = [TargetEntity create];
 		
-        [self addChild: player];
-        [self addChild: target];
+        [self addChild: backgroundEntity];
+        [self addChild: playerEntity];
+        [self addChild: targetEntity];
+		
+		CGSize win = [[CCDirector sharedDirector] winSize];
+		targetPoint = ccp(win.width/2, win.height/2);
 		
 		[self updateJitter];
         [self scheduleUpdate];
@@ -87,12 +95,12 @@ CGPoint targetPoint;
     }
     
 	CGPoint actualTarget = CGPointMake(targetPoint.x + jitterPoint.x, targetPoint.y + jitterPoint.y);
-	player.position = ccpLerp(player.position, actualTarget, 0.1f);
+	playerEntity.position = ccpLerp(playerEntity.position, actualTarget, 0.1f);
 	
-	CGRect collisionRect = CGRectMake(target.position.x - 8, target.position.y - 8, 16, 16);
-	if(CGRectContainsPoint(collisionRect, player.position))
+	if([playerEntity collidingWithNode:targetEntity])
 	{
-		[target respawn];
+		[backgroundEntity burst:actualTarget];
+		[targetEntity respawn];
 	}
 }
 

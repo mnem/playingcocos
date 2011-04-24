@@ -1,5 +1,5 @@
 //
-//  PlayerEntity.h
+//  BackgroundEntity.h
 //  playingcocos
 //
 //  Created by David Wagner on 20/04/2011.
@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface PlayerEntity : CCSprite
+@interface BackgroundEntity : CCSprite
 {
 }
 
--(void) moveToStartPosition;
+-(void) burst:(CGPoint) origin;
 
-+(PlayerEntity *) create;
++(BackgroundEntity *) create;
 
 @end
