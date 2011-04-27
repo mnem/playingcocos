@@ -15,18 +15,17 @@
 #import "BackgroundEntity.h"
 #import "bitsnbobs.h"
 #import "CCNode-Collision.h"
+#import "FramerateIndicatorEntity.h"
 
+#define ENABLE_BACKGROUND 0
+
+#if ENABLE_BACKGROUND
 BackgroundEntity *backgroundEntity;
-PlayerEntity *playerEntity;
-TargetEntity *targetEntity;
+#endif
 
-const int JITTER = 33;
-const int HALF_JITTER = 33/2;
-
-CGPoint jitterPoint;
-int updateJitter;
-
-CGPoint targetPoint;
+PlayerEntity* playerEntity;
+TargetEntity* targetEntity;
+FramerateIndicatorEntity* framerate;
 
 // PlayfieldLayer implementation
 @implementation PlayfieldLayer
@@ -38,18 +37,31 @@ CGPoint targetPoint;
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) 
     {
+#if ENABLE_BACKGROUND
 		backgroundEntity = [BackgroundEntity create];
-		playerEntity = [PlayerEntity create];
-		targetEntity = [TargetEntity create];
-		
         [self addChild: backgroundEntity];
-        [self addChild: playerEntity];
+#endif
+		framerate = [FramerateIndicatorEntity create];
+		[self addChild:framerate];
+		
+		targetEntity = [TargetEntity create];
         [self addChild: targetEntity];
 		
-		CGSize win = [[CCDirector sharedDirector] winSize];
-		targetPoint = ccp(win.width/2, win.height/2);
+		playerEntity = [PlayerEntity create];
+        [self addChild: playerEntity];
+		playerEntity.targetPoint = (CGPoint*)malloc(sizeof(CGPoint));
+
+		for (int i = 0; i < 99; i++)
+		{
+			PlayerEntity* ghost = [PlayerEntity create];
+			ghost.targetPoint = playerEntity.targetPoint;
+			[self addChild: ghost];
+		}
 		
-		[self updateJitter];
+		CGSize win = [[CCDirector sharedDirector] winSize];
+		playerEntity.targetPoint->x = win.width/2;
+		playerEntity.targetPoint->y = win.width/2;
+		
         [self scheduleUpdate];
         self.isTouchEnabled = YES;
 	}
@@ -57,29 +69,26 @@ CGPoint targetPoint;
     return self;
 }
 
-- (void) updateJitter
-{
-	float framerate = 1/[CCDirector sharedDirector].animationInterval;
-	float frThird = framerate / 3;
-    updateJitter = frThird + frThird * nrand();
-    jitterPoint.x = nrand() * JITTER - HALF_JITTER;
-    jitterPoint.y = nrand() * JITTER - HALF_JITTER;
-}
-
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event 
 {
-    targetPoint = [self convertTouchToNodeSpace: touch];
+	CGPoint p = [self convertTouchToNodeSpace: touch];
+	playerEntity.targetPoint->x = p.x;
+	playerEntity.targetPoint->y = p.y;
     return YES;
 }
 
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event 
 {
-    targetPoint = [self convertTouchToNodeSpace: touch];
+	CGPoint p = [self convertTouchToNodeSpace: touch];
+	playerEntity.targetPoint->x = p.x;
+	playerEntity.targetPoint->y = p.y;
 }
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event 
 {
-    targetPoint = [self convertTouchToNodeSpace: touch];
+	CGPoint p = [self convertTouchToNodeSpace: touch];
+	playerEntity.targetPoint->x = p.x;
+	playerEntity.targetPoint->y = p.y;
 }
 
 -(void) registerWithTouchDispatcher
@@ -89,17 +98,11 @@ CGPoint targetPoint;
 
 - (void) update:(ccTime)dt
 {
-    if (--updateJitter <= 0) 
-	{
-        [self updateJitter];
-    }
-    
-	CGPoint actualTarget = CGPointMake(targetPoint.x + jitterPoint.x, targetPoint.y + jitterPoint.y);
-	playerEntity.position = ccpLerp(playerEntity.position, actualTarget, 0.1f);
-	
 	if([playerEntity collidingWithNode:targetEntity])
 	{
+#if ENABLE_BACKGROUND
 		[backgroundEntity burst:actualTarget];
+#endif
 		[targetEntity respawn];
 	}
 }
@@ -110,6 +113,8 @@ CGPoint targetPoint;
 	// in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
+	
+	if(playerEntity.targetPoint) free(playerEntity.targetPoint);
 	
 	// don't forget to call "super dealloc"
 	[super dealloc];

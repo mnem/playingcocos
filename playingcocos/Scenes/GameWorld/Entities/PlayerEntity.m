@@ -8,8 +8,22 @@
 
 #import "PlayerEntity.h"
 #import "CCNode-Collision.h"
+#import "bitsnbobs.h"
+
+const int JITTER = 132;
+const int HALF_JITTER = 132/2;
+
+@interface PlayerEntity ()
+
+- (void) updateJitter;
+
+@end
 
 @implementation PlayerEntity
+
+@synthesize jitterPoint;
+@synthesize targetPoint;
+@synthesize jitterUpdateDelay;
 
 +(PlayerEntity *) create
 {
@@ -21,14 +35,37 @@
     self = [super init];
     if (self) 
 	{
-//		[self initCustomCollisionSize:CGSizeMake(16, 16)];
+		self.jitterPoint = (CGPoint*)malloc(sizeof(CGPoint));
+		self.jitterUpdateDelay = 0;
 		[self moveToStartPosition];
+        [self scheduleUpdate];
     }
     return self;
 }
 
-- (void)dealloc {
-//    [self deallocCustomCollisionSize];
+- (void) updateJitter
+{
+	float framerate = 1/[CCDirector sharedDirector].animationInterval;
+	float frThird = framerate / 3;
+    self.jitterUpdateDelay = frThird + frThird * nrand();
+    self.jitterPoint->x = nrand() * JITTER - HALF_JITTER;
+    self.jitterPoint->y = nrand() * JITTER - HALF_JITTER;
+}
+
+- (void) update:(ccTime)dt
+{
+    if (--self.jitterUpdateDelay <= 0) 
+	{
+        [self updateJitter];
+    }
+    
+	CGPoint actualTarget = CGPointMake(self.targetPoint->x + self.jitterPoint->x, self.targetPoint->y + self.jitterPoint->y);
+	self.position = ccpLerp(self.position, actualTarget, 0.1f);
+}
+
+- (void)dealloc 
+{
+	if(self.jitterPoint) free(self.jitterPoint);
     [super dealloc];
 }
 

@@ -76,6 +76,7 @@ extern NSString * cocos2dVersion(void);
 
 @implementation CCDirector
 
+@synthesize frameRate = frameRate_;
 @synthesize animationInterval = animationInterval_;
 @synthesize runningScene = runningScene_;
 @synthesize displayFPS = displayFPS_;
@@ -507,12 +508,12 @@ static CCDirector *_sharedDirector = nil;
 //		sprintf(format,"%.1f",frameRate);
 //		[FPSLabel setCString:format];
 
-		NSString *str = [[NSString alloc] initWithFormat:@"%.1f", frameRate_];
-		[FPSLabel_ setString:str];
-		[str release];
+//		NSString *str = [[NSString alloc] initWithFormat:@"%.1f", frameRate_];
+//		[FPSLabel_ setString:str];
+//		[str release];
 	}
 
-	[FPSLabel_ draw];
+//	[FPSLabel_ draw];
 }
 #else
 // display the FPS using a manually generated Texture (very slow)

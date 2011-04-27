@@ -15,7 +15,6 @@
 
 -(void) respawn;
 
-
 +(TargetEntity *) create;
 
 @end

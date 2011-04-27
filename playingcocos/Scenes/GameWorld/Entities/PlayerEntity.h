@@ -11,7 +11,14 @@
 
 @interface PlayerEntity : CCSprite
 {
+	CGPoint *targetPoint;
+	CGPoint *jitterPoint;
+	int jitterUpdateDelay;
 }
+
+@property(nonatomic) CGPoint* targetPoint;
+@property(nonatomic) CGPoint* jitterPoint;
+@property(nonatomic) int jitterUpdateDelay;
 
 -(void) moveToStartPosition;
 

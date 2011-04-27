@@ -127,6 +127,9 @@
 		55802198135E21F4007DBEB3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55802197135E21F4007DBEB3 /* RootViewController.m */; };
 		5580219B135E21F5007DBEB3 /* PlayfieldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5580219A135E21F5007DBEB3 /* PlayfieldLayer.m */; };
 		558021A3135E29D2007DBEB3 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 558021A2135E29D2007DBEB3 /* player.png */; };
+		55BBE4E41367829F00175502 /* framrate-indicator-marks.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BBE4E21367829F00175502 /* framrate-indicator-marks.png */; };
+		55BBE4E51367829F00175502 /* framrate-indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BBE4E31367829F00175502 /* framrate-indicator.png */; };
+		55BBE4E81367840600175502 /* FramerateIndicatorEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BBE4E71367840600175502 /* FramerateIndicatorEntity.m */; };
 		55E69879135F76CA00B2915F /* GameWorldSceneFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69878135F76CA00B2915F /* GameWorldSceneFactory.m */; };
 		55E69885135F912300B2915F /* BackgroundEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69884135F912300B2915F /* BackgroundEntity.m */; };
 		55E69888135F94CC00B2915F /* TargetEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E69887135F94CB00B2915F /* TargetEntity.m */; };
@@ -376,6 +379,10 @@
 		5580219A135E21F5007DBEB3 /* PlayfieldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayfieldLayer.m; sourceTree = "<group>"; };
 		5580219C135E21F5007DBEB3 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		558021A2135E29D2007DBEB3 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Resources/player.png; sourceTree = "<group>"; };
+		55BBE4E21367829F00175502 /* framrate-indicator-marks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "framrate-indicator-marks.png"; path = "Resources/framrate-indicator-marks.png"; sourceTree = "<group>"; };
+		55BBE4E31367829F00175502 /* framrate-indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "framrate-indicator.png"; path = "Resources/framrate-indicator.png"; sourceTree = "<group>"; };
+		55BBE4E61367840600175502 /* FramerateIndicatorEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FramerateIndicatorEntity.h; sourceTree = "<group>"; };
+		55BBE4E71367840600175502 /* FramerateIndicatorEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FramerateIndicatorEntity.m; sourceTree = "<group>"; };
 		55E69877135F76CA00B2915F /* GameWorldSceneFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWorldSceneFactory.h; sourceTree = "<group>"; };
 		55E69878135F76CA00B2915F /* GameWorldSceneFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameWorldSceneFactory.m; sourceTree = "<group>"; };
 		55E69883135F912300B2915F /* BackgroundEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundEntity.h; sourceTree = "<group>"; };
@@ -458,6 +465,8 @@
 		55802042135E21F2007DBEB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				55BBE4E21367829F00175502 /* framrate-indicator-marks.png */,
+				55BBE4E31367829F00175502 /* framrate-indicator.png */,
 				5526570F1362471F00A9611C /* rainbowburst.png */,
 				551A0509135ECB6300E17A30 /* particles2.plist */,
 				557F8C44135E4B7000E13599 /* particles.plist */,
@@ -826,6 +835,8 @@
 				55E69884135F912300B2915F /* BackgroundEntity.m */,
 				55E69886135F94CB00B2915F /* TargetEntity.h */,
 				55E69887135F94CB00B2915F /* TargetEntity.m */,
+				55BBE4E61367840600175502 /* FramerateIndicatorEntity.h */,
+				55BBE4E71367840600175502 /* FramerateIndicatorEntity.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -911,6 +922,8 @@
 				557F8C45135E4B7000E13599 /* particles.plist in Resources */,
 				551A050A135ECB6300E17A30 /* particles2.plist in Resources */,
 				552657101362471F00A9611C /* rainbowburst.png in Resources */,
+				55BBE4E41367829F00175502 /* framrate-indicator-marks.png in Resources */,
+				55BBE4E51367829F00175502 /* framrate-indicator.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1025,6 +1038,7 @@
 				55E6988B135F989300B2915F /* bitsnbobs.m in Sources */,
 				55265714136247A000A9611C /* PlayerEntity.m in Sources */,
 				55FD7F791364B813009D77FC /* CCNode-Collision.m in Sources */,
+				55BBE4E81367840600175502 /* FramerateIndicatorEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
